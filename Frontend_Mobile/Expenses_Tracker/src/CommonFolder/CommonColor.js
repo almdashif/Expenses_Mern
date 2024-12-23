@@ -1,0 +1,31 @@
+
+const Commoncolor = {
+  CommonAppColor:"#003278",
+  EntityKeyUpColor:"#286090",
+  EntityKeyDownColor:"#5bc0de",
+  CommonRedColor:"#ff3300",
+  CommonMildRedColor:'#f72d2d',
+  CommonBlueColor:"#0033cc",
+  CommonGreenColor:"#009933",
+  CommonYellowColor:"#ffff00",
+  CommonBlackColor:"#000000",
+  CommonWhiteColor:"#ffffff",
+  CommonHeaderColor:"#660066",
+  CommonBackgroundColor:"#f2f2f2",
+  CommonDarkGrayColor: "#bfbfbf",
+  CommonGrayColor: "#bfbfbf",
+  CommonMildGrayColor: "#747272",
+  CommonLightGray:'#e6e6e6',
+  CommonLightBlack: "#262626",
+  CommonDarkTextGray:"#454545",
+  CommonTextGray:"#999999",
+  CommonTextMildBlack:'#43464c',
+  CommonGoldColor:"#FFD700",
+  Commonraingcolor:"#ffcc66",
+  darkblue: "#1E1E55",
+  headercolor: "#0466DE",
+  CommonNavyBlue:'#003878',
+  CommonNavyBlueDimmed:'#DEE7F0',
+  };
+  
+  export default Commoncolor;
