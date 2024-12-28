@@ -28,7 +28,7 @@ const isAdmin = (req, res, next) => {
 };
 
  const verifyToken = async (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
+  const token = req.header('Authorization')?.replace('bearer ', '');
 
   if (!token) {
     return res.status(401).json({ message: 'Access Denied. No token provided.' });
