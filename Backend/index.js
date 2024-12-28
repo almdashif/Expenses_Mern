@@ -8,7 +8,8 @@ import { db } from './src/DB/db.js';
 import incomeRouter from './src/Routes/income.js';
 import expenseRouter from './src/Routes/expense.js';
 import transactionsRouter from './src/Routes/transactions.js';
-
+import authRouter from './src/Routes/auth.js';
+import userRoutes from './src/Routes/user.js';
 const app = express();
 let server = process.env.server || 3000;
 
@@ -19,6 +20,8 @@ app.use(cors());
 app.use('/income', incomeRouter);
 app.use('/expense', expenseRouter);
 app.use('/transactions', transactionsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/users', userRoutes);
 
 db().then(() => {
   app.listen(server, () => {
