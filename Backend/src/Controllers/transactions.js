@@ -19,3 +19,24 @@ export const transactions = async (req, res) => {
         res.status(500).json({ error: 'Internal server error', details: error.message });
     }
 }
+export const allTransactionsCount = async (req, res) => {
+    try {
+        const totalIncome = await incomeModal.aggregate([
+            { $group: { _id: null, totalIncome: { $sum: "$amount" } } }
+        ]);
+
+        const totalExpense = await expenseModal.aggregate([
+            { $group: { _id: null, totalExpense: { $sum: "$amount" } } }
+        ]);
+
+        const totalAmount = (totalIncome[0]?.totalIncome || 0) - (totalExpense[0]?.totalExpense || 0);
+
+        res.status(200).json({
+            incomeTotal: totalIncome[0]?.totalIncome || 0,
+            expenseTotal: totalExpense[0]?.totalExpense || 0,
+            balanceTotal: totalAmount
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error', details: error.message });
+    }
+}

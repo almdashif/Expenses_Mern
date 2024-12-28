@@ -1,10 +1,10 @@
 
 
 import { Router } from 'express';
-import { transactions } from '../Controllers/transactions.js';
+import { allTransactionsCount, transactions } from '../Controllers/transactions.js';
 
 const router = Router();
 
-router.get('/', transactions);
+router.get('/', transactions).get('/count', allTransactionsCount);
 
 export default router;
